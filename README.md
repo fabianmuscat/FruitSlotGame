@@ -1,2 +1,3 @@
 # FruitSlotGame
- Relax Gaming Coding Challenge
+
+Relax Gaming Coding Challenge
