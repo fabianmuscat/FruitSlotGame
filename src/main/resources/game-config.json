@@ -1,0 +1,219 @@
+{
+  "game": {
+    "rows": 3,
+    "reels": 3,
+    "paylines": 5,
+    "betAmount": 10,
+    "simulationRounds": 10000000
+  },
+  "symbols": [
+    {
+      "code": "W1",
+      "name": "Wild",
+      "type": "wild"
+    },
+    {
+      "code": "H1",
+      "name": "Seven",
+      "type": "high"
+    },
+    {
+      "code": "H2",
+      "name": "Bell",
+      "type": "high"
+    },
+    {
+      "code": "H3",
+      "name": "Bar",
+      "type": "high"
+    },
+    {
+      "code": "L1",
+      "name": "Banana",
+      "type": "low"
+    },
+    {
+      "code": "L2",
+      "name": "Orange",
+      "type": "low"
+    },
+    {
+      "code": "L3",
+      "name": "Plum",
+      "type": "low"
+    },
+    {
+      "code": "L4",
+      "name": "Cherry",
+      "type": "low"
+    },
+    {
+      "code": "B1",
+      "name": "Bonus",
+      "type": "bonus"
+    }
+  ],
+  "wild": {
+    "symbol": "W1",
+    "substitutesFor": ["H1", "H2", "H3", "L1", "L2", "L3", "L4"],
+    "doesNotSubstituteFor": ["B1"]
+  },
+  "reels": [
+    {
+      "id": 0,
+      "symbols": [
+        "L4", "L3", "L2", "B1", "H2", "H2", "H2", "L1", "L1", "L1",
+        "H3", "H1", "H2", "L2", "L2", "L2", "W1", "L3", "L3", "L3",
+        "H3", "H3", "H3", "L4", "L4", "L4", "H3", "L1", "L2", "L4",
+        "H3", "L3", "L3", "L3", "B1", "L2", "L2", "L2", "L2", "H3",
+        "H3", "H3", "L4", "L4", "L4", "B1", "L1", "L1", "L1", "H1",
+        "L2", "L2", "L2", "B1", "L3", "L3", "L3"
+      ]
+    },
+    {
+      "id": 1,
+      "symbols": [
+        "L4", "L3", "L2", "B1", "H2", "H2", "H2", "L1", "L1", "L1",
+        "H3", "H1", "H2", "L2", "L2", "L2", "W1", "L3", "L3", "L3",
+        "H3", "H3", "H3", "L4", "L4", "L4", "H3", "L1", "L2", "L4",
+        "H3", "L3", "L3", "L3", "B1", "L2", "L4", "H3", "H3", "H3",
+        "B1", "L2", "L2", "L2", "L2", "B1", "L3", "L3", "L3", "H1",
+        "L4", "L4", "L4", "L3"
+      ]
+    },
+    {
+      "id": 2,
+      "symbols": [
+        "L4", "L3", "L2", "B1", "H2", "H2", "H2", "L1", "L1", "L1",
+        "H3", "H1", "H2", "L2", "L2", "L2", "W1", "L3", "L3", "L3",
+        "H3", "H3", "H3", "L4", "L4", "L4", "H3", "L1", "L2", "L4",
+        "H3", "L3", "L3", "L3", "B1", "L2", "H2", "H3", "H3", "H3",
+        "L2", "L2", "L2", "L1", "L1", "B1", "L2", "L2", "L2", "L1"
+      ]
+    }
+  ],
+  "paylines": {
+    "coordinateConvention": "Each position is [row, reel], using zero-based indexes.",
+    "lines": [
+      {
+        "id": 1,
+        "name": "Top row",
+        "positions": [[0, 0], [0, 1], [0, 2]]
+      },
+      {
+        "id": 2,
+        "name": "Middle row",
+        "positions": [[1, 0], [1, 1], [1, 2]]
+      },
+      {
+        "id": 3,
+        "name": "Bottom row",
+        "positions": [[2, 0], [2, 1], [2, 2]]
+      },
+      {
+        "id": 4,
+        "name": "Diagonal top-left to bottom-right",
+        "positions": [[0, 0], [1, 1], [2, 2]]
+      },
+      {
+        "id": 5,
+        "name": "Diagonal bottom-left to top-right",
+        "positions": [[2, 0], [1, 1], [0, 2]]
+      }
+    ]
+  },
+  "paytable": {
+    "baseGamePayouts": {
+      "W1": 2000,
+      "H1": 800,
+      "H2": 400,
+      "H3": 80,
+      "L1": 60,
+      "L2": 20,
+      "L3": 16,
+      "L4": 12
+    },
+    "bonusSymbol": {
+      "symbol": "B1",
+      "baseGamePayout": 0,
+      "effect": "Triggers bonus game when enough bonus symbols appear anywhere on the grid."
+    }
+  },
+  "bonusGame": {
+    "trigger": {
+      "symbol": "B1",
+      "minimumVisibleCount": 3,
+      "scope": "anywhere on 3x3 grid"
+    },
+    "coinTable": [
+      {
+        "value": 100,
+        "weight": 10
+      },
+      {
+        "value": 50,
+        "weight": 20
+      },
+      {
+        "value": 30,
+        "weight": 40
+      },
+      {
+        "value": 20,
+        "weight": 50
+      },
+      {
+        "value": 10,
+        "weight": 151
+      },
+      {
+        "value": 5,
+        "weight": 220
+      },
+      {
+        "value": 4,
+        "weight": 260
+      },
+      {
+        "value": 3,
+        "weight": 300
+      },
+      {
+        "value": 2,
+        "weight": 350
+      }
+    ],
+    "diceTable": [
+      {
+        "multiplier": 1,
+        "weight": 1
+      },
+      {
+        "multiplier": 2,
+        "weight": 1
+      },
+      {
+        "multiplier": 3,
+        "weight": 1
+      },
+      {
+        "multiplier": 4,
+        "weight": 1
+      },
+      {
+        "multiplier": 5,
+        "weight": 1
+      },
+      {
+        "multiplier": 6,
+        "weight": 1
+      }
+    ],
+    "winFormula": "coinValue * diceMultiplier * betAmount"
+  },
+  "expectedRtp": {
+    "baseGame": 0.7627290448343078,
+    "bonusGame": 0.1988053645892032,
+    "total": 0.961534409423511
+  }
+}

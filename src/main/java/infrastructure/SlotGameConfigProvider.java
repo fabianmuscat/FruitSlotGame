@@ -1,22 +1,27 @@
 package infrastructure;
 
-import domain.model.GameConfig;
-import domain.model.Payline;
-import domain.model.Paytable;
-import domain.model.Reel;
+import domain.model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SlotGameConfigProvider {
     public GameConfig load() {
         return new GameConfig(createReels(),
                 createPaylines(),
-                createPaytable()
+                createPaytable(),
+                createBonusCoinTable(),
+                createExpectedRtp()
         );
     }
 
-    private List<Reel> createReels() {
-        throw new UnsupportedOperationException();
+    private ArrayList<Reel> createReels() {
+        return new ArrayList<>() {{
+            add(new Reel(new Symbol("W1", "Wild")));
+            add(new Reel(new Symbol("H1", "Seven ")));
+            add(new Reel(new Symbol("H2", "Bell")));
+            add(new Reel(new Symbol("H3", "Bar")));
+        }};
     }
 
     private List<Payline> createPaylines() {
@@ -24,6 +29,14 @@ public class SlotGameConfigProvider {
     }
 
     private Paytable createPaytable() {
+        throw new UnsupportedOperationException();
+    }
+
+    private BonusCoinTable createBonusCoinTable() {
+        throw new UnsupportedOperationException();
+    }
+
+    private ExpectedRtp createExpectedRtp() {
         throw new UnsupportedOperationException();
     }
 }
