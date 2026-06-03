@@ -1,9 +1,14 @@
 package domain.model;
 
-public class Reel {
-    private Symbol symbol;
+import java.util.List;
 
-    public Reel(Symbol symbol) {
-        this.symbol = symbol;
+public class Reel {
+    private int id;
+    private List<Symbol> symbols;
+
+    public Reel(int id, List<Symbol> symbols) {
+        this.id = id;
+        this.symbols = symbols;
     }
 }
+

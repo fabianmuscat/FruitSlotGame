@@ -1,19 +1,25 @@
 package domain.model;
 
 public class Symbol {
+    private String code;
     private String name;
-    private String description;
+    private SymbolType symbolType;
+
+    public String getCode() {
+        return code;
+    }
 
     public String getName() {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+    public SymbolType getSymbolType() {
+        return symbolType;
     }
 
-    public Symbol(String name, String description) {
+    public Symbol(String code, String name, SymbolType symbolType) {
+        this.code = code;
         this.name = name;
-        this.description = description;
+        this.symbolType = symbolType;
     }
 }

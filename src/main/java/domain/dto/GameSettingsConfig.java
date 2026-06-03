@@ -1,0 +1,37 @@
+package domain.dto;
+
+public class GameSettingsConfig {
+    private int rows;
+    private int reels;
+    private int paylines;
+    private int betAmount;
+    private long simulationRounds;
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getReels() {
+        return reels;
+    }
+
+    public int getPaylines() {
+        return paylines;
+    }
+
+    public int getBetAmount() {
+        return betAmount;
+    }
+
+    public long getSimulationRounds() {
+        return simulationRounds;
+    }
+
+    public GameSettingsConfig(int rows, int reels, int paylines, int betAmount, long simulationRounds) {
+        this.rows = rows;
+        this.reels = reels;
+        this.paylines = paylines;
+        this.betAmount = betAmount;
+        this.simulationRounds = simulationRounds;
+    }
+}
