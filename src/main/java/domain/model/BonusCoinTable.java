@@ -27,7 +27,7 @@ public class BonusCoinTable {
     }
 
     public void addCoinValue(WeightedValue coinValue) {
-        if  (coinValues == null) {
+        if (coinValues == null) {
             coinValues = new ArrayList<>();
         }
 

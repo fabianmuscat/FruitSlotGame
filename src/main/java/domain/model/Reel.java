@@ -18,4 +18,12 @@ public class Reel {
         this.id = id;
         this.symbols = symbols;
     }
+
+    public int getReelLength() {
+        return symbols.size();
+    }
+
+    public Symbol getSymbolAt(int index) {
+        return symbols.get(index % symbols.size());
+    }
 }

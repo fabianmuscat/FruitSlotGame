@@ -18,7 +18,7 @@ public class Paytable {
             baseGamePayouts = new HashMap<>();
         }
 
-        if  (baseGamePayouts.containsKey(symbol)) {
+        if (baseGamePayouts.containsKey(symbol)) {
             throw new IllegalStateException("Base game payouts already contains symbol " + symbol);
         }
 

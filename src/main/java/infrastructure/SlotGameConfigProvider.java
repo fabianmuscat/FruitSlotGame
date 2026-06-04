@@ -183,8 +183,8 @@ public class SlotGameConfigProvider {
             bonusCoinTable.addCoinValue(new WeightedValue(coin.getWeight(), coin.getValue()));
         }
 
-        for (WeightedValueConfig dice: diceTableConfig) {
-            if  (dice.getWeight() <= 0 || dice.getMultiplier() <= 0) {
+        for (WeightedValueConfig dice : diceTableConfig) {
+            if (dice.getWeight() <= 0 || dice.getMultiplier() <= 0) {
                 throw new IllegalStateException("Invalid dice data: " + dice.getWeight() + " " + dice.getMultiplier());
             }
 
@@ -228,7 +228,7 @@ public class SlotGameConfigProvider {
             notSubstitutesFor.add(symbol);
         }
 
-        return new WildRules(wildSymbol,  substitutesFor, notSubstitutesFor);
+        return new WildRules(wildSymbol, substitutesFor, notSubstitutesFor);
     }
 
     private BonusTriggerRules convertBonusTriggerRules(BonusTriggerConfig bonusTriggerConfig, Map<String, Symbol> symbols, GameSettings gameSettings) {
