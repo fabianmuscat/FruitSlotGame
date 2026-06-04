@@ -1,7 +1,5 @@
 package domain.model;
 
-import domain.dto.ReelConfig;
-
 import java.util.List;
 
 public record GameConfig(
@@ -11,6 +9,8 @@ public record GameConfig(
         List<Payline> paylines,
         Paytable paytable,
         BonusCoinTable bonusCoinTable,
+        WildRules wildRules,
+        BonusTriggerRules bonusTriggerRules,
         ExpectedRtp expectedRtp
 ) {
 }
