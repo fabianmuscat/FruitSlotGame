@@ -10,6 +10,10 @@ public class Paytable {
         return baseGamePayouts;
     }
 
+    public int getPayoutFor(Symbol symbol) {
+        return baseGamePayouts.get(symbol);
+    }
+
     public Paytable() {
     }
 

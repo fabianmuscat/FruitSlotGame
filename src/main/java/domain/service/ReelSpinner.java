@@ -46,6 +46,7 @@ public class ReelSpinner {
         Symbol[][] grid = new Symbol[visibleRows][reels.size()];
         int[] reelStops = new int[reels.size()];
 
+        // Each reel receives an independent stop, then visible rows are read downward with reel wrapping.
         for (Reel reel : reels) {
             int column = reel.getId();
             int stop = random.nextInt(reel.getReelLength());
