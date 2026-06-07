@@ -1,4 +1,4 @@
-# FruitSlotGame
+# Coding Challenge - FruitSlotGame
 
 ## Requirements
 
