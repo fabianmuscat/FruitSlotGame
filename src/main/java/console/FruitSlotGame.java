@@ -2,13 +2,12 @@ package console;
 
 import application.SimulationResult;
 import application.SimulationRunner;
-import domain.model.*;
+import domain.model.GameConfig;
 import domain.service.BonusEvaluator;
 import domain.service.PaylineEvaluator;
 import domain.service.ReelSpinner;
 import infrastructure.SlotGameConfigProvider;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class FruitSlotGame {
