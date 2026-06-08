@@ -10,7 +10,6 @@ public record GameConfig(
         Paytable paytable,
         BonusCoinTable bonusCoinTable,
         WildRules wildRules,
-        BonusTriggerRules bonusTriggerRules,
-        ExpectedRtp expectedRtp
+        BonusTriggerRules bonusTriggerRules
 ) {
 }

@@ -9,54 +9,44 @@
   "symbols": [
     {
       "code": "W1",
-      "name": "Wild",
       "type": "wild"
     },
     {
       "code": "H1",
-      "name": "Seven",
       "type": "high"
     },
     {
       "code": "H2",
-      "name": "Bell",
       "type": "high"
     },
     {
       "code": "H3",
-      "name": "Bar",
       "type": "high"
     },
     {
       "code": "L1",
-      "name": "Banana",
       "type": "low"
     },
     {
       "code": "L2",
-      "name": "Orange",
       "type": "low"
     },
     {
       "code": "L3",
-      "name": "Plum",
       "type": "low"
     },
     {
       "code": "L4",
-      "name": "Cherry",
       "type": "low"
     },
     {
       "code": "B1",
-      "name": "Bonus",
       "type": "bonus"
     }
   ],
   "wild": {
     "symbol": "W1",
-    "substitutesFor": ["H1", "H2", "H3", "L1", "L2", "L3", "L4"],
-    "doesNotSubstituteFor": ["B1"]
+    "substitutesFor": ["H1", "H2", "H3", "L1", "L2", "L3", "L4"]
   },
   "reels": [
     {
@@ -93,31 +83,20 @@
     }
   ],
   "paylines": {
-    "coordinateConvention": "Each position is [row, reel], using zero-based indexes.",
     "lines": [
       {
-        "id": 1,
-        "name": "Top row",
         "positions": [[0, 0], [0, 1], [0, 2]]
       },
       {
-        "id": 2,
-        "name": "Middle row",
         "positions": [[1, 0], [1, 1], [1, 2]]
       },
       {
-        "id": 3,
-        "name": "Bottom row",
         "positions": [[2, 0], [2, 1], [2, 2]]
       },
       {
-        "id": 4,
-        "name": "Diagonal top-left to bottom-right",
         "positions": [[0, 0], [1, 1], [2, 2]]
       },
       {
-        "id": 5,
-        "name": "Diagonal bottom-left to top-right",
         "positions": [[2, 0], [1, 1], [0, 2]]
       }
     ]
@@ -132,18 +111,12 @@
       "L2": 20,
       "L3": 16,
       "L4": 12
-    },
-    "bonusSymbol": {
-      "symbol": "B1",
-      "baseGamePayout": 0,
-      "effect": "Triggers bonus game when enough bonus symbols appear anywhere on the grid."
     }
   },
   "bonusGame": {
     "trigger": {
       "symbol": "B1",
-      "minimumVisibleCount": 3,
-      "scope": "anywhere on 3x3 grid"
+      "minimumVisibleCount": 3
     },
     "coinTable": [
       {
@@ -208,12 +181,6 @@
         "multiplier": 6,
         "weight": 1
       }
-    ],
-    "winFormula": "coinValue * diceMultiplier * betAmount"
-  },
-  "expectedRtp": {
-    "baseGame": 0.7627290448343078,
-    "bonusGame": 0.1988053645892032,
-    "total": 0.961534409423511
+    ]
   }
 }

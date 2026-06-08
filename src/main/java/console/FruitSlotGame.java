@@ -39,18 +39,9 @@ public class FruitSlotGame {
         System.out.println("==========================");
 
         System.out.println();
-        System.out.printf("Base-game RTP: %.4f%% (expected %.4f%%)%n",
-                baseGameRtp * 100,
-                config.expectedRtp().getBaseGame() * 100
-        );
-        System.out.printf("Bonus-game RTP: %.4f%% (expected %.4f%%)%n",
-                bonusGameRtp * 100,
-                config.expectedRtp().getBonusGame() * 100
-        );
-        System.out.printf("Total RTP: %.4f%% (expected %.4f%%)%n",
-                totalRtp * 100,
-                config.expectedRtp().getTotal() * 100
-        );
+        System.out.printf("Base-game RTP: %.4f%%%n", baseGameRtp * 100);
+        System.out.printf("Bonus-game RTP: %.4f%%%n", bonusGameRtp * 100);
+        System.out.printf("Total RTP: %.4f%%%n", totalRtp * 100);
     }
 
     private static SimulationResult getSimulationResult(GameConfig config, Random random) {

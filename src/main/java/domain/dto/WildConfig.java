@@ -5,7 +5,6 @@ import java.util.List;
 public class WildConfig {
     private String symbol;
     private List<String> substitutesFor;
-    private List<String> doesNotSubstituteFor;
 
     public String getSymbol() {
         return symbol;
@@ -15,13 +14,8 @@ public class WildConfig {
         return substitutesFor;
     }
 
-    public List<String> getDoesNotSubstituteFor() {
-        return doesNotSubstituteFor;
-    }
-
-    public WildConfig(String symbol, List<String> substitutesFor, List<String> doesNotSubstituteFor) {
+    public WildConfig(String symbol, List<String> substitutesFor) {
         this.symbol = symbol;
         this.substitutesFor = substitutesFor;
-        this.doesNotSubstituteFor = doesNotSubstituteFor;
     }
 }

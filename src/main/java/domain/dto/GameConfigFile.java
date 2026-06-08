@@ -10,7 +10,6 @@ public class GameConfigFile {
     private PaylinesConfig paylines;
     private PaytableConfig paytable;
     private BonusGameConfig bonusGame;
-    private ExpectedRtpConfig expectedRtp;
 
     public GameSettingsConfig getGame() {
         return game;
@@ -40,7 +39,4 @@ public class GameConfigFile {
         return bonusGame;
     }
 
-    public ExpectedRtpConfig getExpectedRtp() {
-        return expectedRtp;
-    }
 }

@@ -39,7 +39,6 @@ public class SlotGameConfigProvider {
         BonusCoinTable bonusCoinTable = convertBonusCoinTable(configFile.getBonusGame());
         WildRules wildRules = convertWildRulesConfig(configFile.getWild(), symbolsByCode);
         BonusTriggerRules bonusTriggerRules = convertBonusTriggerRules(configFile.getBonusGame().getTrigger(), symbolsByCode, gameSettings);
-        ExpectedRtp expectedRtp = convertExpectedRtp(configFile.getExpectedRtp());
 
         return new GameConfig(
                 gameSettings,
@@ -49,8 +48,7 @@ public class SlotGameConfigProvider {
                 paytable,
                 bonusCoinTable,
                 wildRules,
-                bonusTriggerRules,
-                expectedRtp
+                bonusTriggerRules
         );
     }
 
@@ -67,7 +65,7 @@ public class SlotGameConfigProvider {
     private List<Symbol> convertSymbols(List<SymbolConfig> symbolConfig) {
         List<Symbol> symbols = new ArrayList<>();
         for (SymbolConfig sym : symbolConfig) {
-            symbols.add(new Symbol(sym.getCode(), sym.getName(), SymbolType.valueOf(sym.getType().toUpperCase())));
+            symbols.add(new Symbol(sym.getCode(), SymbolType.valueOf(sym.getType().toUpperCase())));
         }
 
         return symbols;
@@ -115,7 +113,7 @@ public class SlotGameConfigProvider {
         for (PaylineConfig line : lines) {
             List<Position> positions = new ArrayList<>();
             if (line.getPositions().size() != gameSettings.getReels()) {
-                throw new IllegalArgumentException("Payline " + line.getId() + " must have " + gameSettings.getReels() + " positions");
+                throw new IllegalArgumentException("Payline must have " + gameSettings.getReels() + " positions");
             }
 
             for (List<Integer> ps : line.getPositions()) {
@@ -136,7 +134,7 @@ public class SlotGameConfigProvider {
 
                 positions.add(new Position(row, reel));
             }
-            paylines.add(new Payline(line.getId(), line.getName(), positions));
+            paylines.add(new Payline(positions));
         }
 
         return paylines;
@@ -205,11 +203,6 @@ public class SlotGameConfigProvider {
             throw new IllegalStateException("Substitutes for list is empty");
         }
 
-        List<String> notSubsFor = wildConfig.getDoesNotSubstituteFor();
-        if (notSubsFor == null || notSubsFor.isEmpty()) {
-            throw new IllegalStateException("Does not substitute for list is empty");
-        }
-
         List<Symbol> substitutesFor = new ArrayList<>();
         for (String symbolCode : subsFor) {
             Symbol symbol = symbols.get(symbolCode);
@@ -219,16 +212,7 @@ public class SlotGameConfigProvider {
             substitutesFor.add(symbol);
         }
 
-        List<Symbol> notSubstitutesFor = new ArrayList<>();
-        for (String symbolCode : notSubsFor) {
-            Symbol symbol = symbols.get(symbolCode);
-            if (symbol == null) {
-                throw new IllegalStateException("Unknown symbol: " + symbolCode);
-            }
-            notSubstitutesFor.add(symbol);
-        }
-
-        return new WildRules(wildSymbol, substitutesFor, notSubstitutesFor);
+        return new WildRules(wildSymbol, substitutesFor);
     }
 
     private BonusTriggerRules convertBonusTriggerRules(BonusTriggerConfig bonusTriggerConfig, Map<String, Symbol> symbols, GameSettings gameSettings) {
@@ -246,13 +230,5 @@ public class SlotGameConfigProvider {
         }
 
         return new BonusTriggerRules(triggerSymbol, bonusTriggerConfig.getMinimumVisibleCount());
-    }
-
-    private ExpectedRtp convertExpectedRtp(ExpectedRtpConfig expectedRtpConfig) {
-        return new ExpectedRtp(
-                expectedRtpConfig.getBaseGame(),
-                expectedRtpConfig.getBonusGame(),
-                expectedRtpConfig.getTotal()
-        );
     }
 }
